@@ -12,6 +12,9 @@ import argparse
 import traceback
 import importlib.util
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')   # if the first alone doesn’t solve it
 
 # ---- Load local history_tranlations.py by filename (same folder) ----
 import history_translations 

@@ -116,6 +116,8 @@ def translate_columns(file_path, translator, column_pairs):
                     translated_texts.append(translated_text if translated_text is not None else response)
 
                 df.loc[needs_translation, tgt_col] = translated_texts
+                df.to_csv(file_path, index=False)
+                print(f"✅ File saved: {file_path} for column {tgt_col}")
             else:
                 print(f"✅ No rows need translation in column '{src_col}'.")
 
